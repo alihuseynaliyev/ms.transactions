@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create transaction table
+      author: Ali Huseynaliyev
+      changes:
+        - createTable:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: account_number
+                  type: varchar(24)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(6)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: decimal(16, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transaction_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_t
+                  type: timestamp
+                  constraints:
+                    nullable: false
